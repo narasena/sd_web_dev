@@ -101,6 +101,13 @@ console.log("eq3: d !== e", d !== e)
 // coba bikin pemrograman menghitung luas persegi, panjang 10, lebar 5, console.log
 const panjangX = 20
 const lebarY = 10
+const recArea = panjangX * lebarY
+console.log(recArea)
 
 // hitung luas segitiga, panjang 10 tinggi 4
+const triangleHeight = 4
+const triangleLength = 10
+const traingleArea = 0.5 * triangleLength * triangleHeight
 // hitung luas lingkaran, radius 5
+const radius = 5
+const circleArea = 3.14 * radius * radius
