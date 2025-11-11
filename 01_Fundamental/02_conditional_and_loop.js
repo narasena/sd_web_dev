@@ -152,8 +152,11 @@ let target = 6
 // ● Write a code to check whether the number is odd or even
 //  ○ Example: 25 → odd number, 2 → even number
 
-function checkOddEven(number){
-  if(number % 2 === 0) 
+let numberToCheck = 24
+if ( numberToCheck % 2 === 0 ){
+  console.log("Even Number")
+} else {
+  console.log("Odd Number")
 }
 
 //  ● Write a code to check whether the number is prime number or not
