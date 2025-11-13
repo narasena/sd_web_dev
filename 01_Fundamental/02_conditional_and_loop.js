@@ -162,11 +162,41 @@ if ( numberToCheck % 2 === 0 ){
 //  ● Write a code to check whether the number is prime number or not
 //  ○ Example: 7 → 7 is a prime number
 //  ○ Example: 6 → 6 is not a prime number
+//  Bilangan Prima / Prime Number => Bilangan yang cuma 2 kemungkinan
+//  Habis dibagi 1 dan dirinya sendiri, artinya modulo % 1 === 0 && % num === 0
+const numCheck = -99
+let countZeroModulo = 0
+for (i = 1; i <= numCheck; i++){
+    if ( numCheck === 1 || numCheck % i === 0 ){
+        countZeroModulo++
+    }
+}
+console.log(numCheck, (countZeroModulo <= 2) ? " Bilangan Prima":" Bukan Prima")
+console.log("Berapa kali sisa pembagian 0:",countZeroModulo)
+
+
 //  ● Write a code to find the sum of the numbers 1 to N
 //  ○ Example: 5 → 1 + 2 + 3 + 4 + 5 = 15
 //  ○ Example: 3 → 1 + 2 + 3 = 6
+const numToSum = 5
+let sum = 0
+for (i = 1; i <= numToSum; i++){
+    sum += i
+}
+console.log("Sum 1 to ", numToSum ," = ", sum )
+
+// var => bisa di re-assign/timpa dan bisa dipanggil di semua scope
+// let => bisa di re-assign/timpa tapi hanya dalam satu scope
+// const => tidak bisa di re-assign/timpa dan hanya bisa dalam satu scope
+
+// Javascript dibuat ~1995 , 1995 - 2015 cuma ada syntax var. 
+// 2015 ES6+ memperkenalkan let dan const
+
+
 //  ● Write a code to find factorial of a number
 //  ○ Example: 4! → 4 x 3 x 2 x 1 = 24
-//  ○ Example: 6! → 6 x 5 x 4 x 3 x 2 x 1 = 720
+//  ○ Example: 6! → 6 x 5 x 4 x 3 x 2 x 1 = 72
+
+
 //  ● Write a code to print the first N fibonacci numbers
 //  ○ Example: 15 → 610
