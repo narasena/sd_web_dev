@@ -231,6 +231,16 @@ countDown(20)
 // ● Parameters : height → triangle height
 // ● Example input: 5
 
+function trianglePattern(height){
+    let array = []
+    for(i=1; i<=height; i++){
+        array.push(i)
+        console.log(array)
+    }
+}
+
+console.log(trianglePattern(4))
+
 // Create a function that can create a triangle pattern according to the height we provide like the 
 // following :
 // 01

@@ -150,9 +150,72 @@ console.log(reversedName)
 
 
 // Exercise
-//  1. Write a function to get the lowest, highest and average value in the array (with and without sort function).
+//  1. Write a function to get the lowest, highest and average value in the array 
+// (with and without sort function).
 //  a.
 //  Example : arr = [12, 5, 23, 18, 4, 45, 32] → {lowest : 4, highest: 45, average: 19.8xxx}
+
+
+const gadgets = ["handphone","tablet", "laptop","smartwatch"]
+
+// looping standar nya:
+// index !== length
+// length array => jumlah isi array
+// index akan selalu dimulai dari 0,
+// Index array terakhir akan selalu bernilai array.length - 1
+let tool = ""
+for (i = 0; i < gadgets.length; i++){
+    tool = gadgets[i]
+    console.log("tool:",tool)
+}
+
+// Looping khusus array:
+// Salah satunya itu bentuknya
+
+for (device of gadgets){
+    console.log("device:",device)
+}
+
+function printId(name, birthDate, nationality){
+    console.log("Nama: ", name)
+    console.log("Tgl.Lahir: ", new Date(birthDate))
+    console.log("Kewarganegaraan: ",nationality)
+}
+
+printId("Joko","1985-04-23","WNI")
+printId("Charles","1994-06-16","WNA")
+
+const arr = [12, 5, 23, 18, 4, 45, 32]
+const arbitraryNumbers = [99, -2, 78, -200]
+function minMaxAvg(numbers){
+    let lowest = numbers[0] // apapun nilai arraynya, nilai terndah initial adalah array index ke-0
+    let max = numbers[0] // apapun nilai arraynya, nilai tertinggi initial adalah array index ke-0
+    let sum = 0
+    for(number of numbers){
+        console.log("number:",number)
+        // 1. Mencari apakah nilai itu lebih rendah dari sebelumnya
+        if(number < lowest){ // ketika di number = 5, lowest = 12
+            console.log("lowest before:",lowest)
+            lowest = number // nilai lowest baru = 5
+            console.log("lowest after:",lowest)
+        }
+        // 2. Mencari apakah nilai itu lebih besar dari sebelumnya
+        if(number > max){ // ketika di number = 23, max = 12
+            console.log("max before:",max)
+            max = number // nilai max baru = 23
+            console.log("max after:",max)
+        }
+        console.log("sum before:",sum)
+        sum += number
+        console.log("sum after:",sum)
+    }
+    return [lowest,max,(sum/numbers.length)]
+}
+
+console.log(minMaxAvg(arr))
+console.log(minMaxAvg(arbitraryNumbers))
+
+
 
 //  2. Write a function that takes an array of words and returns a string by concatenating the words in the array, 
 // separated by commas and - the last word - by an 'and'.
@@ -163,10 +226,54 @@ console.log(reversedName)
 //  a.
 //  Example : numbers = [5, 3, 1, 7, 2, 6] → 2
 
-//  4. Write a function to calculate each element in the same position from two arrays of integer. Assume both arrays are 
-// of the same length.
+const arrayOfNumbers = [5, 3, 1, 7, 2, 6]
+function secondSmallest(array){
+    let smallest = array[0]
+    let second = array[0]
+    for (num of array){
+        console.log("number:",num)
+        if(num < smallest){ // kita mencari angka terkecil
+            console.log("smallest before:", smallest)
+            second = smallest
+            smallest = num
+            console.log("smallest after:", smallest)
+        }
+        if (num < second && num > smallest){
+            console.log("second smallest before:", second)
+            second = num
+            console.log("second smallest after:", second)
+        }
+        console.log("smallest now:", smallest)
+        console.log("second smallest now:", second)
+    }
+    return second
+}
+
+function secondSmallestVerTwo(array){
+    return array.sort()[1]
+}
+
+console.log("second smallest ver 1:",secondSmallest(arrayOfNumbers))
+console.log("second smallest ver 2:",secondSmallestVerTwo(arrayOfNumbers))
+
+const arrrr = [-20, 10, -30, 40]
+console.log(secondSmallest(arrrr))
+
+
+//  4. Write a function to calculate each element in the same position from two arrays of integer. 
+// Assume both arrays are of the same length.
 //  a.
 //  Example : [1, 2, 3] + [3, 2, 1] → [4, 4, 4]
+function twoArraySum(array1,array2){
+    let sumArray = []
+    for(i=0; i<array1.length; i++){
+        sumArray[i] = array1[i] + array2[i]
+    }
+    return sumArray
+}
+
+
+console.log(twoArraySum([1,2,3],[3,2,1]))
 
 //  5. Write a function that adds an element to the end of an array. However, the element should only be added if it is 
 // not already in the array.
