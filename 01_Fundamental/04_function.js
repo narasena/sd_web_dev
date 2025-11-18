@@ -2,7 +2,7 @@
 // Automation / Simplify a task
 
 let a = 10
-let b = 20 
+let b = 20
 let c = a + b
 console.log(a," + ",b," = ",c)
 
@@ -101,11 +101,11 @@ console.log(hello("donni"))
 // 4. IIFE (Immediately Invoked Function Expression)
 // Si function dipakai sekali dan tidak perlu reusable
 
-// (function(){
-//     const temp = 25
-//     const message = "Temperatur PC adalah derajat Celcius"
-//     console.log(message)
-// })()
+(function(){
+    const temp = 25
+    const message = `Temperatur PC adalah ${temp} derajat Celcius`
+    console.log(message)
+})()
 
 // 5. Function Constructor
 
