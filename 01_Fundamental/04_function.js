@@ -92,7 +92,7 @@ const hello = (name) => {
     return "Hello " + name 
 }
 
-console.log(hello("donni"))
+console.log(hello("donni"));
 
 // Programming conventions
 // Pada dasarnya setiap line atau syntax itu diakhiri dengan ;
@@ -277,7 +277,7 @@ trianglePatterVerTwo(3)
 // ○ Example: n = 15 → 1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz, 11, Fizz, 12, 13, 14, FizzBuzz 
 
 function fizzBuzz(n){
-    let array = []
+    const array = []
     for(i=1; i<=n; i++){
         if(i%3===0 && i%5 ===0 ){
             array.push("FizzBuzz")
