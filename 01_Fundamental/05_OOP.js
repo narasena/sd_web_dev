@@ -37,27 +37,27 @@ person.hello()  // mengakses method
 let carName = "Ferrari"
 let otherCarName = carName
 
-console.log("carName:", carName)
-console.log("otherCarName:", otherCarName)
+console.log("carName:", carName) // Ferrari
+console.log("otherCarName:", otherCarName) // Ferrari
 otherCarName = "Lamborghini" // disini value "Ferrari" di replace/timpa dengan "Lamborghini"
-console.log("otherCarName:", otherCarName)
-console.log("carName:", carName)
+console.log("otherCarName:", otherCarName) // Lamborghini
+console.log("carName:", carName) // Ferrari
 
 // Mutable (Reference Type)
 const childrenName = ["Abdul","Adi"]
 const otherChildrenName = childrenName 
 // mendeclare dengan value berisi mutable object dia hannya sebagai pointer
 
-console.log("childrenName:",childrenName)
-console.log("otherChildrenName:",otherChildrenName)
+console.log("childrenName:",childrenName) // ["Abdul","Adi"]
+console.log("otherChildrenName:",otherChildrenName) // ["Abdul","Adi"]
 otherChildrenName.push('Riky')
-console.log("childrenName:",childrenName)
-console.log("otherChildrenName:",otherChildrenName)
+console.log("childrenName:",childrenName) // ["Abdul","Adi", "Riky"]
+console.log("otherChildrenName:",otherChildrenName)// ["Abdul","Adi", "Riky"]
 
 // Mutasi tidak bisa ditimpa/replace valuenya
 // Menggunakan buildin method untuk memutasikan dirinya sendiri
 childrenName.push("Seto")
-console.log(childrenName)
+console.log(childrenName) // ["Abdul","Adi", "Riky", "Seto"]
 
 // Cara 1 deklarasi object
 const car = {
@@ -74,7 +74,7 @@ car.brand = "Ferrari"
 car.fuel = "electric"
 console.log(car)
 
-//Cara 2 delklarasi object
+//Cara 2 deklarasi object
 const motorycle = new Object()
 console.log("motorcycle:",motorycle)
 motorycle.brand  = "Kawasaki"
@@ -149,7 +149,7 @@ class User {
         return `${this.firstName} ${this.lastName}` // `` meng-incorporatae code block dalam string
     }
 
-    setFullName(value){ // seter untuk merubah komponen di dalam class sesuai yang kita atur
+    set fullName(value){ // seter untuk merubah komponen di dalam class sesuai yang kita atur
         const splitValue = value.split(" ")
         this.firstName = splitValue[0]
         this.lastName = splitValue[1]
@@ -162,8 +162,22 @@ console.log(user1.fullName)
 const user2 = new User("Ucup","Ajah")
 console.log(user2.fullName) // menggunakan getter / get yg kita setting otomatis
 
-user2.setFullName("Roni Sibutarbutar")
+user2.fullName = "Roni Sibutarbutar"
 console.log(user2.firstName)
 console.log(user2.lastName)
 console.log(user2.fullName)
 
+
+const phone = {
+    firstName: "John",
+    lastName:"Doe",
+    get fullName(){
+        return `${this.firstName} ${this.lastName}`
+    },
+
+    set fullName(value){
+        const splitName = value.split(" ")
+        this.firstName = splitName[0]
+        this.firstName = splitName[0]
+    }
+}
