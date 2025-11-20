@@ -233,7 +233,7 @@ countDown(20)
 
 function trianglePattern(height){
     let array = []
-    for(i=1; i<=height; i++){
+    for(let i=1; i<=height; i++){
         array.push(i)
         console.log(array)
     }
@@ -256,7 +256,7 @@ console.log(trianglePattern(4))
 function trianglePatterVerTwo(height){
     let array = []
     let lastNum = 0
-    for(i=1; i<=height; i++){    // i = 1                 i = 2                                                 i = 3
+    for(let i=1; i<=height; i++){    // i = 1                 i = 2                                                 i = 3
         while(array.length < i){ // array.length = 0 < 1  array.lnegth = 0 < 2         array.length = 1 < 2
             lastNum++            // lastNum = 0 + 1 = 1   lastNum = 1 + 1 = 2          lastNum = 2 + 1 = 3
             array.push(lastNum)  // [] push(1) => [1]     [] push(2) => [2]            [2] push(3) => [2,3]
@@ -278,7 +278,7 @@ trianglePatterVerTwo(3)
 
 function fizzBuzz(n){
     const array = []
-    for(i=1; i<=n; i++){
+    for(let i=1; i<=n; i++){
         if(i%3===0 && i%5 ===0 ){
             array.push("FizzBuzz")
         } else if (i%5 === 0){
@@ -313,3 +313,8 @@ console.log(fizzBuzz(16))
 
 // 5. Write a function to find the difference in 2 given array
 // a. Example : arr1 = [1, 2, 3, 4, 5], arr2 = [3, 4, 5, 6, 7] → [1, 2, 6, 7] 
+
+export const recArea = (recLength,recWidth) => {
+    const areaOfRectangle = recLength * recWidth
+    return areaOfRectangle
+}
