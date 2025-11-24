@@ -117,6 +117,7 @@ console.log(reversedRandomNums)
 
 const sortedVegetables = vegetables.sort() // Kalo tidak ada parameter akan mensort sesuai semantik alfabet atau penomoran
 console.log(sortedVegetables)
+console.log(randomNums.sort())
 
 const sortedNumsAsc = randomNums.sort((a,b) => a-b) // Khusus number dan sesuai urutan matematika
 console.log(sortedNumsAsc)

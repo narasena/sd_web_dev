@@ -233,7 +233,7 @@ function diffArea(side){  // parent function => parent tidak bisa menggunakan pa
 console.log(diffArea(side))
 
 // 3. Inheritance
-// Menurunkan/mewariskan properti dan method dari kelas lain
+// Menurunkan/mewariskan properti dan method dari class yg lain
 // Membuat parent class reusable
 
 class Vehicle {
@@ -346,9 +346,10 @@ class RadioFrequency{
 
 // Standarnya untuk bisa mengakses metode/properti harus mendeklarasikan object dulu
 // Membuat instance dari class
-const radio1 = new RadioFrequency()
+const radio1 = new RadioFrequency() // initialize instance class
 
-console.log(radio1.randomFrequency1) // harus di define dengan new Class
+console.log(radio1.randomFrequency1)
+// harus di define dengan new Class
 // console.log(radio1.getConnection) => getConnection merupakan metode statis 
 // Static => memanggil langsung ke class tanpa instance baru / new Class
 
@@ -356,3 +357,228 @@ console.log(radio1.randomFrequency1) // harus di define dengan new Class
 // console.log(RadioFrequency.randomFrequency)
 
 console.log(RadioFrequency.getConnection()) // pemanggilan langsung tanpa instance new Class
+
+// super() digunakan ketika inheritance
+
+class Fish {
+    constructor(name, habitat, color){
+        this.name = name
+        this.habitat = habitat
+        this.color = color
+    }
+
+    swim(){
+        console.log(`I am ${this.name} fish. And I can swim`)
+    }
+}
+
+const snapper = new Fish("Red Snapper","lake", "red")
+snapper.swim()
+
+// super() itu untuk menambahkan dari yang sebelumnya
+class MammalFish extends Fish{
+    constructor(name, habitat, color, maxChildren){
+        super(name, habitat, color)
+        this.maxChildren = maxChildren
+    }
+} 
+
+const dolphin = new MammalFish("Dolphin","sea","gray",4)
+dolphin.swim()
+
+// Spread parameter
+// [{},{},{},...] => array of objects
+// [[],[],[],...] => array of arrays
+// {array1: [], array2: [], ....} => object of array keys
+
+const shoes = [
+    {
+        name: "Adidas",
+        price: 2000000,
+        origin: "USA"
+    },
+    {
+        name: "Balenciaga",
+        price: 11000000,
+        origin: "Spain"
+    },
+    {
+        name: "Pioneer",
+        price: 500000,
+        origin: "Indonesia"
+    },
+]
+
+// spread => copy isinya saja tanpa menjadi pointer / reference , tidak merubah variable awal
+const newShoes = [...shoes,{name: "Pierro",price:350000,origin:"Indonesia"}]
+
+console.log(shoes)
+console.log(newShoes)
+
+const jeans = {
+    brand: "Off White",
+    price: 2500000,
+    origin: "USA"
+}
+
+const newJeans = {...jeans,color:"Ash Blue"} // ketika key nya belum ada akan membuat key baru
+
+console.log(jeans)
+console.log(newJeans)
+
+const newJeans2 = {...jeans,brand: "Wrangler"} // ketika key sudah ada akan me-assign ulang si value dari key tersebut
+console.log(jeans)
+console.log(newJeans2)
+
+// Exercises
+// 1.
+
+const students = [
+    {
+        name: "Siti",
+        email: "siti@mail.com",
+        age: 15,
+        score: 86
+    },
+    {
+        name: "Udin",
+        email: "udin@mail.com",
+        age: 16,
+        score: 71
+    },
+    {
+        name: "Ojan",
+        email: "ojan@mail.com",
+        age: 18,
+        score: 64
+    },
+    {
+        name: "Rohana",
+        email: "rohana@mail.com",
+        age: 16,
+        score: 95
+    }
+]
+
+// Buat fungsi untuk mengurutkan:
+// a. lowest, highest berdasarkan umur (age)
+// b. lowest, highest berdasarkan umur (score)
+
+function studentSorter (data, sortBy){
+    if(sortBy === "age"){
+        data.sort((a,b)=> a.age - b.age)
+    } else if (sortBy === "score"){
+        data.sort((a,b) => a.score - b.score)
+    }
+
+    return {
+        lowest: data[0],
+        highest: data[data.length - 1]
+    }
+}
+console.log(students)
+console.log(studentSorter(students,"age"))
+console.log(studentSorter(students,"score"))
+
+function studentSorter2 (data, sorter) {
+    let values = data.map(student => student[sorter])
+    console.log(values)
+
+    let minValue = Math.min(...values)
+    let maxValue = Math.max(...values)
+
+    console.log(minValue,maxValue)
+
+    let lowest = data.find(student => student.age === minValue)
+    let highest = data.find(student => student.age === maxValue)
+     console.log(lowest,highest)
+}
+
+studentSorter2(students,"age")
+
+//  Create a program to create transaction
+//  ● Product Class
+//      ○ Properties
+//          ■ Name
+//          ■ Price
+//  ● Transaction Class
+//      ○ Properties
+//          ■ Total
+//          ■ Product
+//              ● All product data
+//              ● Qty
+//      ○ Add to cart method → Add product to transaction
+//      ○ Show total method → Show total current transaction
+//      ○ Checkout method → Finalize transaction, return transaction data
+
+// 1. Create Product class
+
+class Product {
+    constructor(name, price){
+        this.name = name
+        this.price = price
+    }
+}
+
+const fruit = new Product("Orange",25000)
+const milk = new Product("Ultra",18000)
+const soap = new Product("Lifebuoy",35000)
+
+const currentCarts = [
+    {...fruit, qty: 2},
+    {...milk, qty:1},
+    {...soap, qty: 3}
+]
+
+console.log(currentCarts)
+
+class Transaction {
+    constructor(products){
+        this.total = 0
+        this.products = products
+    }
+
+    totalTrans(){
+        this.products.forEach(product => {
+            this.total += product.price * product.qty
+        });
+        return this.total
+    }
+}
+
+const newTrans = new Transaction(currentCarts)
+console.log(newTrans.totalTrans())
+
+// Exercise 1 
+// ● Create a function to merge two array of student data and remove duplicate data
+//  ● Student data : name & email
+//  ● Example : 
+// Array1 → [
+//  { name: ‘Student 1’, email : ‘student1@mail.com’  }, 
+// { name: ‘Student 2’, email : ‘student2@mail.com’  }
+//  ]
+//  Array2 → [
+//  { name: ‘Student 1’, email : ‘student1@mail.com’  }, 
+// { name: ‘Student 3’, email : ‘student3@mail.com’  }
+//  ]
+//  ● Result : 
+// ArrayResult → [
+//  { name: ‘Student 1’, email : ‘student1@mail.com’  }, 
+// { name: ‘Student 2’, email : ‘student2@mail.com’  },
+//  { name: ‘Student 3’, email : ‘student3@mail.com’  }
+//  ]
+
+
+// Exercise 2
+// Create a function that can accept input as an array of objects and switch all values into property and 
+// property into value (key => value, value => key)
+//  ● Example : 
+// ○ Input : [{ name: ‘David’, age: 20 }]
+//  ○ Output : [{ David: ‘name’, 20: ‘age’}]
+
+// Exercise 3
+// Create a function to find a factorial number using recursion
+//  ● Example
+//  ○ Input :  5
+//  ○ Output: 5! = 5 x 4 x 3 x 2 x 1 = 120
+
