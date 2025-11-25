@@ -568,6 +568,70 @@ console.log(newTrans.totalTrans())
 //  { name: ‘Student 3’, email : ‘student3@mail.com’  }
 //  ]
 
+const arrData1 = [
+    {
+        name : "student 1",
+        email : "student1@mail.com",
+    },
+    {
+        name : "student 2",
+        email : "student2@mail.com",
+    }
+];
+const arrData2 = [
+    {
+        name : "student 1",
+        email : "student1@mail.com",
+    },
+    {
+        name : "student 3",
+        email : "student3@mail.com",
+    }
+]
+const join = arrData1.concat(arrData2)
+console.log(join.includes({
+        name : "student 1",
+        email : "student1@mail.com",
+    })) // seolah2 membuat variable baru
+const student1 = join[0] // mutable => reference type
+console.log(join.includes(student1))
+
+function sortStudent (arrData1,arrData2){
+    const joinedArray = arrData1.concat(arrData2)
+    console.log("joined array:",joinedArray)
+    // const joinedArray2 = [...arrData1,...arrData2]
+    // 1. Gabungkan 2 array
+    // 2. Melooping array gabungan dan mencari nilai yang uniknya/ tidak berduplikasi
+    let diffArray = []
+    let duplicate = []
+
+    for (let i=0; i<joinedArray.length; i++){
+        if(!diffArray.find(student => student.email === joinedArray[i].email)){
+          diffArray.push(joinedArray[i])
+        } else {
+          if(!duplicate.find(student => student.email === joinedArray[i].email)){
+          duplicate.push(joinedArray[i])
+          }
+        }
+    }
+    
+    return {
+      diffArray,
+      duplicate
+    }
+    
+}
+console.log(sortStudent(arrData1,arrData2))
+
+const car2 = {
+  brand: "Honda",
+  type: "Civic",
+  engine: 15000
+}
+
+console.log("brand" in car2) // untuk mencari key di dalam object
+console.log(car2.brand === "Honda")
+
 
 // Exercise 2
 // Create a function that can accept input as an array of objects and switch all values into property and 
@@ -575,6 +639,34 @@ console.log(newTrans.totalTrans())
 //  ● Example : 
 // ○ Input : [{ name: ‘David’, age: 20 }]
 //  ○ Output : [{ David: ‘name’, 20: ‘age’}]
+
+const arr = [{ name: "David", age: 20 },{ brand: "Honda", wheels: 4 }]
+
+function valueSwithcer(array){
+  const newArray = []
+  for(let element of array){
+    const newElement = {}
+    for(let property in element){
+      let prevKey = property // 'name' & 'age' || 'brand' & 'wheels'
+      let prevValue = element[property] // "David" & 20 || "Honda" & 4
+      newElement[prevValue] = prevKey // {"David":"name",'20':'age'} || {"Honda":'brand','4':"wheels"}
+    }
+    newArray.push(newElement)
+  }
+  return newArray
+}
+
+console.log(valueSwithcer(arr))
+// (2) [{...}, {...}]
+// 0
+// :
+// (2) {20: "age", David: "name"}
+// 1
+// :
+// (2) {4: "wheels", Honda: "brand"}
+// [[Prototype]]
+// :
+// []
 
 // Exercise 3
 // Create a function to find a factorial number using recursion
