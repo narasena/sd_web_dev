@@ -674,3 +674,16 @@ console.log(valueSwithcer(arr))
 //  ○ Input :  5
 //  ○ Output: 5! = 5 x 4 x 3 x 2 x 1 = 120
 
+// Rumus Fctorial: n! = n * (n-1)!
+
+function factorial(num){
+    let result = 0
+    if(num <= 1){
+        return 1
+    } else {
+        result = num * factorial(num - 1)
+    }
+    return result
+}
+
+console.log(factorial(2))
