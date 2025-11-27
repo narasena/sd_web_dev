@@ -318,3 +318,9 @@ export const recArea = (recLength,recWidth) => {
     const areaOfRectangle = recLength * recWidth
     return areaOfRectangle
 }
+
+function sum (a,b){
+    return a + b
+}
+
+console.log(sum("coro","edan"))

@@ -24,7 +24,7 @@ const list = {
     }
 }
 
-// 2D Arrays
+// 2D Arrays => Matrix => 3D 
 
 const twoDimensionalArray = [
     [1,2,3], // index 0
