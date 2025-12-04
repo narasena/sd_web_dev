@@ -12,3 +12,5 @@
 
 // git checkout <nama branch> =>  berpindah ke branch
 // git checkout -b <new_branch_name> => menambahkan branch baru dari saat ini dan langsung berpindah ke branch tersebut
+
+// git merge => menggabungkan branch lain ke branch yng dituju
