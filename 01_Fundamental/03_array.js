@@ -283,3 +283,12 @@ console.log(twoArraySum([1,2,3],[3,2,1]))
 // b.
 //  Example : arr = [1, 2, 3, 4], newElement = 7   →   [1, 2, 3, 4, 7]
 
+function echoArray (array){
+        for(i=array.length-1; i>=0; i--){
+                console.log(array[i])
+                    }
+                    }
+
+                    const dozenArr = [10,20,30,40,50]
+
+                    echoArray(dozenArr)
