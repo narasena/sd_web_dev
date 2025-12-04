@@ -3,14 +3,14 @@
 ## 1. PROGRAMMING FUNDAMENTAL (JAVASCRIPT & TYPESCRIPT)
 
 ```bash
-1.1 Intro, Variables, Operators
-1.2 Conditional & Loop
-1.3 Array & Function
-1.4 OOP (Object Oriented Programming)
-1.5 DSA (Data Structures & Algorithm)
-1.6 Asynchronous, Error Handling, JSON, Module
-1.7 Typescript
-1.8 Version Control
+1.1 Intro, Variables, Operators ✅
+1.2 Conditional & Loop ✅
+1.3 Array & Function ✅
+1.4 OOP (Object Oriented Programming) ✅
+1.5 DSA (Data Structures & Algorithm) ✅
+1.6 Asynchronous, Error Handling, JSON, Module ✅
+1.7 Typescript ✅
+1.8 Version Control 
 ```
 
 ## 2. FRONTEND DEVELOPMENT
