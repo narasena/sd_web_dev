@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .static-01 {
+            background-color: cadetblue;
+            width: 50vw;
+            height: 20vw;
+            padding: 32px 32px;
+        }
+
+        .static-02 {
+            background-color: darkkhaki;
+            width: 40vw;
+            height: 15vw;
+
+        }
+
+        .static-03 {
+            background-color: darkgoldenrod;
+            width: 100vw;
+            height: 200vh;
+            /* position: relative; */
+        }
+
+        .absolute-01 {
+            background-color: indigo;
+            width: 5vw;
+            height: 5vw;
+            position: absolute;
+            top: 0px;
+            right: 300px
+        }
+
+        .fixed-01 {
+            background-color: navy;
+            width: 100vw;
+            height: 5vw;
+            position: fixed;
+            top: 0;
+        }
+
+        .sticky-01{
+            background-color: darkred;
+            width: 100vw;
+            height: 5vw;
+            position: sticky;
+            top: 5vw;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- position -->
+    <div class="static-01">
+        <div class="static-02">
+            <div class="absolute-01"></div>
+        </div>
+    </div>
+    <div class="static-03">
+        <div class="fixed-01"></div>
+        <div class="sticky-01"></div>
+    </div>
+
+</body>
+
+</html>

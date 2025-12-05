@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- untuk mengganti judul tab/page yg dibuka -->
+    <title>Title</title>
+    <!-- internal styling  -->
+    <style>
+        /* Alt + Shift + F => auto format penulisan vs code  */
+        /* ketika menulis styling elemen akan berpengaruh ke semua elemennya */
+        button {
+            background-color: crimson;
+            color: white;
+            width: 300px;
+            height: 60px;
+            font-weight: 600;
+            font-size: x-large;
+            border-radius: 16px;
+            border: 0px;
+        }
+        button:hover {
+            background-color:darkred;
+            color: grey;
+        }
+        button:active {
+            background-color: blueviolet;
+        }
+        button:focus {
+            background-color: deeppink;
+        }
+        
+
+        .blue-box {
+            background-color: dodgerblue;
+            color: white;
+            width: 300px;
+            height: 60px;
+            font-weight: 600;
+            font-size: x-large;
+            border-radius: 16px;
+            border: 0px;
+            margin: 8px 0 0 0;
+            padding: 10px 16px 10px 16px;
+        }
+
+        .green-box {
+           background-color: green;
+            color: white;
+            /* em itu ada di element selama tidak dirubah 1em = 16px */
+            width: 10em;
+            height: 2em;
+            font-weight: 600;
+            font-size: x-large;
+            border-radius: 16px;
+            border: 0px;
+
+        }
+
+        .orange-box {
+          background-color: orange;
+            color: white;
+            /* em itu ada di element selama tidak dirubah 1em = 16px */
+            width: 100vw;
+            height: 100vh;
+            font-weight: 600;
+            font-size: x-large;
+            border-radius: 16px;
+            border: 0px;  
+        }
+    </style>
+</head>
+
+<body>
+    <!-- elemen memiliki property masing2 yang biasa disebut props  -->
+    <h1>Ini belajar CSS</h1>
+    <!-- inline styling -->
+    <button >
+        Ini sebuah tombol
+    </button>
+    <button>
+        Ini tombol ke dua
+    </button>
+
+    <div class="blue-box">
+        <div class="green-box">
+
+        </div>
+    </div>
+    <div class="orange-box"></div>
+</body>
+
+</html>
