@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <div id="logo">Catalog-Z</div>
@@ -16,24 +18,20 @@
             <p>Contact</p>
         </div>
     </header>
-    <img 
-    src="https://images.pexels.com/photos/19703200/pexels-photo-19703200/free-photo-of-two-swans-on-a-lake.jpeg" 
-    alt="hero-img"
-    style="width: 100%; height: 200px; object-fit: cover; top: 100px; object-position: 50% 25%;"
-    
-    >
+    <img src="https://images.pexels.com/photos/19703200/pexels-photo-19703200/free-photo-of-two-swans-on-a-lake.jpeg"
+        alt="hero-img" style="width: 100%; height: 200px; object-fit: cover; top: 100px; object-position: 50% 25%;">
     <h1 id="header1">Ini sebelum button di-click</h1>
     <button type="button" onclick=headerChange()>Click Saya</button>
     <div id="test"></div>
+    <div id="gallery">
+
+    </div>
     <footer>
 
     </footer>
 </body>
-<script>
-    const newHeading = "Sudah berubah, coy!"
-    function headerChange () {
-        document.getElementById("header1").innerHTML = newHeading
-        document.getElementById("test").innerHTML = `<div id="target">Berhasil di click</div>`
-    }
+<script src="script.js">
+// CODE SPLITTING 
 </script>
+
 </html>

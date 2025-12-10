@@ -1,0 +1,33 @@
+.display {
+    color: black;
+    background-color: lightslategrey;
+    font-size: xx-large;
+    font-weight: 600;
+    font-family: 'Courier New', Courier, monospace;
+    width: 20vw;
+    height: 5vw;
+    border: 2px;
+    border-style: solid;
+    border-color: black;
+    padding: 4px;
+}
+
+.digit-btn {
+    margin: 4px;
+    padding: 16px;
+    background-color: darkslategray;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    font-weight: 500;
+}
+
+.digit-btn:hover {
+    background-color: dimgray;
+}
+
+.digit-btn:active {
+    background-color: dodgerblue;
+}
