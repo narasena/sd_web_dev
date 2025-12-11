@@ -1,19 +1,23 @@
-const digits = [0,1,2,3,4,5,6,7,8,9]
+const numbers = [0,1,2,3,4,5,6,7,8,9]
+const operators = ["C","+","-","x","÷","="]
+    const digit = document.getElementById('digit')
+    digit.innerHTML = operators.concat(numbers.reverse()).map(digit => {
+        return `<button id=${digit} onClick=clickDigit() class="digit-btn">${digit}</button>`
+    }).join("")
 
-    document.body.addEventListener('click',function (event) {
-        const screen = document.getElementById('screen')
+    let display = document.getElementById('screen')
+    let clickedDigit
 
-        const prevVal = screen.innerHTML
-        const newDigit = event.target.innerHTML
-        let currVal
-    
-        if(event.target && event.target.nodeName === 'BUTTON'){
-            if(digits.includes(Number(newDigit))){
-                currVal = prevVal + newDigit
-            }
-
-        }
-        screen.innerHTML = currVal
+    function clickDigit () {
+        digit.addEventListener('click',function(event){
+            clickedDigit = event.target.innerHTML
+        })
+        console.log(display.innerText === "")
+            console.log(numbers.includes(clickedDigit))
+        if(display.innerText === "" || numbers.includes(clickedDigit)){
             
-    })
+        }
+
+    }
+
 

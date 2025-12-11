@@ -4,12 +4,19 @@
     font-size: xx-large;
     font-weight: 600;
     font-family: 'Courier New', Courier, monospace;
-    width: 20vw;
+    width: 40vw;
     height: 5vw;
     border: 2px;
     border-style: solid;
     border-color: black;
     padding: 4px;
+}
+
+.digit-numbers {
+    max-width: 40vw;
+    display: grid;
+    grid-template-columns: repeat(3,1fr) ;
+
 }
 
 .digit-btn {
