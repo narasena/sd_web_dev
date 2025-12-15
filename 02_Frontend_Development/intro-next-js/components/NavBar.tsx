@@ -1,8 +1,8 @@
 'use client'
 
 import Link from "next/link";
-import { useState } from "react";
-import { FaReact } from "react-icons/fa";
+import { useState, } from "react";
+import { FaReact, } from "react-icons/fa";
 
 export default function NavBar() {
     // hooks
@@ -31,7 +31,7 @@ export default function NavBar() {
   ]
     return (
         <div className="w-full h-12 bg-blue-500 p-2 shadow-md flex items-center justify-between">
-            <div><FaReact className="text-xl text-white" /></div>
+            <HomeLogo />
             <input type="text" className="bg-white w-80"/>
             <div className="flex gap-4">
                 {navButtons.map((nav, index) => (
@@ -47,4 +47,10 @@ export default function NavBar() {
 
         </div>
     )
+}
+
+export function HomeLogo () {
+  return (
+<div><FaReact className="text-xl text-white" /></div>
+  )
 }
