@@ -10,20 +10,20 @@
 1.5 DSA (Data Structures & Algorithm) ✅
 1.6 Asynchronous, Error Handling, JSON, Module ✅
 1.7 Typescript ✅
-1.8 Version Control 
+1.8 Version Control ✅
 ```
 
 ## 2. FRONTEND DEVELOPMENT
 
 ```bash
-2.1 Intro, HTML, CSS
-2.2 CSS Framework (Tailwind)
-2.3 DOM, React Library & React Framework (Next.js)
-2.4 React & Next.js Fundamentals
-2.5 React Hooks
+2.1 Intro, HTML, CSS ✅
+2.2 CSS Framework (Tailwind) ✅
+2.3 DOM, React Library & React Framework (Next.js) ✅
+2.4 React & Next.js Fundamentals ✅
+2.5 React Hooks ✅
 2.6 State Managements
-2.7 Network Call
-2.8 Forms & Validations, Tables, Slug
+2.7 Network Call ✅
+2.8 Forms & Validations, Tables, Slug ✅
 2.9 Advance Features of Next.js
 ```
 
